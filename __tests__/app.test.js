@@ -8,4 +8,11 @@ describe('app routes', () => {
 
     expect(res.text).toEqual('hi');
   });
+
+  it('should post', async() => {
+    const res = await request(app)
+      .post('/echo')
+      .send('hi');
+    expect(res.text).toEqual('hi');
+  });
 });
